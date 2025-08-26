@@ -12,3 +12,27 @@ def unlock_achievement(before_xp, ach_xp, ach_name):
     alert = "Achievement Unlocked: " + ach_name
     print(alert)
     return after_xp, alert
+
+def binary_search(target, arr):
+    #Sorted already so start in the middle of the list
+    if len(arr) == 0:
+        return False
+    end = len(arr) - 1
+    start = 0
+    #Sticking point
+    while start <= end:
+        mid = (end + start) // 2
+        if arr[mid] == target:
+            return True
+        elif arr[mid] > target:
+            end = mid - 1
+        elif arr[mid] < target:
+            start = mid + 1
+    return False
+
+def count_names(list_of_lists, target_name):
+    count_names = 0
+    for list in list_of_lists:
+        count_names += list.count(target_name)
+    return count_names
+            
