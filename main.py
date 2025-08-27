@@ -37,3 +37,17 @@ def count_names(list_of_lists, target_name):
     return count_names
             
 print("test to get things checked in github")
+
+def split_players_into_teams(players):
+    even_players = players[::2]
+    #Two :: to get to the end of the list before the stepper
+    odd_players = players[1::2]
+    return even_players, odd_players
+
+def merge(dict1, dict2):
+    merge_dict = {}
+    for key in dict1:
+        merge_dict[key] = dict1[key]
+    for key in dict2:
+        merge_dict[key] = dict2[key]
+    return merge_dict
